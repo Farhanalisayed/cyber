@@ -1,6 +1,23 @@
 {
-    "version": 2,
-    "name": "native-server",
-    "builds": [{ "src": "server.js", "use": "@vercel/node" }],
-    "routes": [{ "src": "/(.*)", "dest": "/server.js" }]
-  }
+  "builds": [
+    {
+      "src": "cyber-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "cyber-frontend/dist" }
+    },
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/cyber-frontend/dist/index.html"
+    }
+  ]
+}
