@@ -3,7 +3,7 @@
     {
       "src": "cyber-frontend/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "cyber-frontend/dist" }
+      "config": { "distDir": "cyber-frontend" }
     },
     {
       "src": "server.js",
@@ -12,12 +12,12 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "server.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/cyber-frontend/dist/index.html"
+      "dest": "/cyber-frontend/index.html"
     }
   ]
 }
