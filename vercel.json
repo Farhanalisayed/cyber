@@ -12,8 +12,20 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "server.js"
+      "src": "/vendors",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/criticality",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/vendortype",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/logout",
+      "dest": "/server.js"
     },
     {
       "src": "/(.*)",
